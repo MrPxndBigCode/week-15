@@ -1,0 +1,23 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+
+Route::get('/', function () {
+    return "สวัสดีหมีขั้วโลก <a href='".route('login')."'>N word</a>";
+});
+
+Route::get('about', function () {
+    return "เกี่ยวกับเรา";
+});
+
+Route::get('blog/{id}', function ($id) {
+    return "จะเลียมั้ย".$id;
+});
+
+Route::get('admin/user/pond', function () {
+    return "<h1>ยินดีต้อนรับแอดปอน</h1>";
+})->name('login');
+
+Route::fallback(function(){
+    return "ไม่พบหน้า";
+});
